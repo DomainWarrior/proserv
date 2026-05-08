@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    --navy:         #0a1628;
+    --navy-light:   #112240;
+    --navy-mid:     #1a3356;
+    --gold:         #c9a84c;
+    --gold-light:   #e8c97a;
+    --gold-pale:    #fdf6e3;
+    --off-white:    #f8f7f4;
+    --gray-100:     #f0ede8;
+    --gray-200:     #ddd9d2;
+    --gray-300:     #b8b4ad;
+    --gray-500:     #7a7670;
+    --gray-700:     #3d3b38;
+    --green:        #1a6b3c;
+    --green-light:  #e8f5ef;
+    --red:          #c0392b;
+    --red-light:    #fdecea;
+    --blue:         #1a5276;
+    --blue-light:   #e8f0f7;
+  }
+
+  .dark {
+    --off-white:    #0f1923;
+    --gray-100:     #1a2535;
+    --gray-200:     #243145;
+    --gray-700:     #c8d4e4;
+    --navy:         #e0e8f4;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[--off-white] text-[--navy];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .font-display { font-family: var(--font-display, 'DM Serif Display', serif); }
+  .font-sans    { font-family: var(--font-sans,    'DM Sans', sans-serif); }
+
+  .text-balance { text-wrap: balance; }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+
+  .gradient-navy {
+    background: linear-gradient(135deg, #0a1628 0%, #1a3356 60%, #1a4a6e 100%);
+  }
+
+  .gradient-gold {
+    background: linear-gradient(90deg, #c9a84c, #e8c97a);
+  }
+}
+
+/* ─── Components ────────────────────────────────────────────────────────── */
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold-DEFAULT text-navy-DEFAULT
+           rounded-xl font-semibold text-sm transition-all duration-200
+           hover:bg-gold-light hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-navy-DEFAULT
+           border border-navy-DEFAULT/20 rounded-xl font-medium text-sm
+           transition-all duration-200 hover:bg-navy-DEFAULT/5
+           focus:outline-none focus:ring-2 focus:ring-navy-DEFAULT/30;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-navy-DEFAULT text-white
+           rounded-xl font-semibold text-sm transition-all duration-200
+           hover:bg-navy-mid hover:-translate-y-0.5
+           focus:outline-none focus:ring-2 focus:ring-navy-DEFAULT;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
+           text-[--gray-500] hover:text-navy-DEFAULT hover:bg-[--gray-100]
+           rounded-lg transition-all duration-150;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
+           text-red-700 hover:bg-red-50 border border-red-200 rounded-lg transition-all;
+  }
+
+  .input {
+    @apply w-full px-4 py-2.5 border border-[--gray-200] rounded-lg text-sm
+           font-sans text-[--navy] bg-white placeholder:text-[--gray-300]
+           focus:outline-none focus:border-gold-DEFAULT focus:ring-1 focus:ring-gold-DEFAULT/30
+           transition-colors duration-150
+           dark:bg-[--gray-100] dark:border-[--gray-200] dark:text-[--navy];
+  }
+
+  .label {
+    @apply block text-xs font-semibold text-[--navy] uppercase tracking-wider mb-1.5;
+  }
+
+  .card {
+    @apply bg-white border border-[--gray-200] rounded-2xl shadow-sm
+           dark:bg-[--gray-100] dark:border-[--gray-200];
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:-translate-y-1 hover:shadow-md
+           hover:border-gold-DEFAULT cursor-pointer;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-white/65 cursor-pointer transition-all duration-150
+           hover:bg-white/5 hover:text-white;
+  }
+
+  .sidebar-item.active {
+    @apply bg-gold-DEFAULT/15 text-gold-DEFAULT;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-semibold tracking-widest uppercase text-gold-DEFAULT mb-2;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl text-navy-DEFAULT mb-3;
+  }
+
+  .section-subtitle {
+    @apply text-[--gray-500] max-w-xl mx-auto;
+  }
+}
+
+/* ─── React Big Calendar overrides ────────────────────────────────────────── */
+
+.rbc-calendar { font-family: var(--font-sans) !important; }
+.rbc-header { background: #0a1628 !important; color: white !important; padding: 8px !important; font-size: 0.75rem !important; font-weight: 600 !important; }
+.rbc-today { background: #fdf6e3 !important; }
+.rbc-event { background: #c9a84c !important; border: none !important; border-radius: 6px !important; font-size: 0.75rem !important; }
+.rbc-selected { background: #0a1628 !important; }
+.rbc-toolbar button { font-family: var(--font-sans) !important; }
+.rbc-toolbar button.rbc-active { background: #0a1628 !important; color: white !important; }
