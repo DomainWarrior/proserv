@@ -1,65 +1,74 @@
-# ProServ — Production-Ready Local Service Business Website
+# ProServ
 
-A full-stack Next.js 14 application for local service businesses, featuring online booking, customer accounts, admin dashboard, Stripe payments, Google Calendar sync, and automated SMS reminders.
+> Full-stack booking & business management platform for local service companies.
+
+![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
+![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=flat-square&logo=supabase)
+![Stripe](https://img.shields.io/badge/Stripe-Payments-635BFF?style=flat-square&logo=stripe)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=flat-square&logo=vercel)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+
+---
+
+## Overview
+
+ProServ is a production-ready web application built for lawn care, cleaning, HVAC, and similar local service businesses. It covers the full customer lifecycle — from public marketing pages and online booking to Stripe payments, automated SMS reminders, Google Calendar sync, and a full admin dashboard.
+
+---
 
 ## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | Next.js 14 (App Router) |
-| Styling | Tailwind CSS + custom design system |
+| Framework | Next.js 14 (App Router, Server Actions) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
 | Auth & Database | Supabase (PostgreSQL + Row-Level Security) |
 | Payments | Stripe (PaymentIntents + Webhooks) |
 | SMS | Twilio |
 | Calendar | Google Calendar API (OAuth 2.0) |
-| Weather | Open-Meteo API (free, no key needed) |
+| Weather | Open-Meteo (free, no key) |
 | Email | Resend |
-| Deployment | Vercel |
+| Deployment | Vercel (with cron jobs) |
+
+---
 
 ## Features
 
 ### Public Website
-- ✅ Responsive hero with click-to-call button
-- ✅ Service cards with pricing
-- ✅ Before/after image gallery
-- ✅ Animated testimonials carousel
-- ✅ CTA sections throughout
-- ✅ Full services page with pricing tiers
-- ✅ Quote request form (saved to Supabase)
-- ✅ FAQ accordion
-- ✅ Dark mode
-- ✅ Live chat widget
+- Responsive hero with click-to-call
+- Service cards with live pricing tiers
+- Before/after image gallery
+- Animated testimonials carousel
+- Quote request form (saved to Supabase)
+- FAQ accordion
+- Dark mode + live chat widget
 
 ### Customer Portal
-- ✅ Secure signup/login (Supabase Auth)
-- ✅ Password strength indicator
-- ✅ View upcoming & past appointments
-- ✅ Reschedule appointments inline
-- ✅ Cancel appointments
-- ✅ Full calendar view (React Big Calendar)
-- ✅ Real-time weather in calendar (Open-Meteo)
-- ✅ Service history & invoices
-- ✅ Notification center (mark as read)
-- ✅ Profile & password management
-- ✅ SMS/email notification preferences
-- ✅ Google Calendar sync (OAuth)
+- Secure signup/login (Supabase Auth)
+- View, reschedule, and cancel appointments
+- Full calendar view with real-time weather (Open-Meteo)
+- Service history & invoices
+- Notification center
+- Profile & password management
+- SMS/email notification preferences
+- Google Calendar sync (OAuth 2.0)
 
 ### Admin Dashboard
-- ✅ Analytics: revenue, jobs, ratings, customers
-- ✅ Revenue bar charts (Recharts)
-- ✅ Appointment approval system
-- ✅ Worker assignment via dropdown
-- ✅ Customer management table
-- ✅ Worker management cards
-- ✅ Business settings
-- ✅ Integration manager (Stripe, Twilio, Google, Resend)
+- Revenue, jobs, ratings, and customer analytics
+- Revenue bar charts (Recharts)
+- Appointment approval & worker assignment
+- Customer and worker management
+- Business settings panel
+- Integration manager (Stripe, Twilio, Google, Resend)
 
 ### Integrations
-- ✅ **Stripe**: PaymentIntent, webhooks, auto-confirm on payment
-- ✅ **Twilio**: Confirmation, 24h reminder, 2h reminder, cancellation SMS
-- ✅ **Google Calendar**: OAuth, create/update/delete events
-- ✅ **Open-Meteo**: Free weather API, auto-detects customer location
-- ✅ **Supabase**: Auth, RLS, triggers, auto-profile creation
+- **Stripe** — PaymentIntent, webhooks, auto-confirm on payment
+- **Twilio** — Confirmation, 24h, 2h, and cancellation SMS
+- **Google Calendar** — OAuth, create/update/delete events
+- **Open-Meteo** — Free weather API, auto-detects location
+- **Supabase** — Auth, RLS policies, triggers, auto-profile creation
 
 ---
 
@@ -68,70 +77,54 @@ A full-stack Next.js 14 application for local service businesses, featuring onli
 ### 1. Clone & Install
 
 ```bash
-git clone <your-repo>
+git clone https://github.com/DomainWarrior/proserv.git
 cd proserv
 npm install
 ```
 
-### 2. Set Up Environment Variables
+### 2. Environment Variables
 
 ```bash
 cp .env.local.example .env.local
 ```
 
-Fill in all values in `.env.local`. See the table below for where to get each.
-
 | Variable | Where to Get |
 |----------|-------------|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project settings → API |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase project settings → API |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase project settings → API |
-| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe Dashboard → Developers → API Keys |
-| `STRIPE_SECRET_KEY` | Stripe Dashboard → Developers → API Keys |
-| `STRIPE_WEBHOOK_SECRET` | Stripe Dashboard → Webhooks (after adding endpoint) |
-| `TWILIO_ACCOUNT_SID` | Twilio Console → Dashboard |
-| `TWILIO_AUTH_TOKEN` | Twilio Console → Dashboard |
-| `TWILIO_PHONE_NUMBER` | Twilio Console → Phone Numbers |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Project Settings → API |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase → Project Settings → API |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Project Settings → API |
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Stripe Dashboard → API Keys |
+| `STRIPE_SECRET_KEY` | Stripe Dashboard → API Keys |
+| `STRIPE_WEBHOOK_SECRET` | Stripe Dashboard → Webhooks |
+| `TWILIO_ACCOUNT_SID` | Twilio Console |
+| `TWILIO_AUTH_TOKEN` | Twilio Console |
+| `TWILIO_PHONE_NUMBER` | Twilio → Phone Numbers |
 | `GOOGLE_CLIENT_ID` | Google Cloud Console → Credentials |
 | `GOOGLE_CLIENT_SECRET` | Google Cloud Console → Credentials |
-| `GOOGLE_REDIRECT_URI` | Set to `http://localhost:3000/api/calendar/callback` |
+| `GOOGLE_REDIRECT_URI` | `http://localhost:3000/api/calendar/callback` |
 | `RESEND_API_KEY` | resend.com → API Keys |
 
-### 3. Set Up Supabase Database
+### 3. Set Up Supabase
 
 1. Create a project at [supabase.com](https://supabase.com)
-2. Go to SQL Editor
-3. Paste and run the full contents of `supabase-schema.sql`
-4. Enable Email Auth under Authentication → Providers
+2. Go to SQL Editor → paste and run `supabase-schema.sql`
+3. Enable Email Auth under Authentication → Providers
 
-### 4. Set Up Stripe Webhooks (Local Dev)
+### 4. Stripe Webhooks (Local Dev)
 
 ```bash
-# Install Stripe CLI
-brew install stripe/stripe-cli/stripe
-
-# Login and forward webhooks locally
 stripe login
 stripe listen --forward-to localhost:3000/api/webhooks/stripe
 ```
 
-Copy the webhook signing secret and set it as `STRIPE_WEBHOOK_SECRET`.
+Copy the webhook signing secret → `STRIPE_WEBHOOK_SECRET`.
 
-### 5. Set Up Google OAuth
-
-1. Go to [console.cloud.google.com](https://console.cloud.google.com)
-2. Create a project → Enable Google Calendar API
-3. Create OAuth 2.0 credentials (Web Application)
-4. Add `http://localhost:3000/api/calendar/callback` as an authorized redirect URI
-5. Copy Client ID and Secret to `.env.local`
-
-### 6. Run Development Server
+### 5. Run
 
 ```bash
 npm run dev
+# http://localhost:3000
 ```
-
-Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -141,85 +134,65 @@ Open [http://localhost:3000](http://localhost:3000)
 src/
 ├── app/
 │   ├── (public)/          # Homepage, services, booking
-│   ├── (auth)/            # Login, signup, reset password
+│   ├── (auth)/            # Login, signup
 │   ├── (dashboard)/       # Customer portal
 │   ├── (admin)/           # Admin dashboard
-│   └── api/               # All API routes
-│       ├── auth/          # Auth actions + callback
-│       ├── appointments/  # CRUD + status updates
+│   └── api/               # API routes
+│       ├── appointments/  # CRUD + status
 │       ├── payments/      # Stripe PaymentIntents
 │       ├── webhooks/      # Stripe webhook handler
-│       ├── weather/       # Open-Meteo proxy
 │       ├── calendar/      # Google Calendar OAuth
 │       ├── sms/           # Twilio reminder cron
-│       └── admin/         # Admin analytics
+│       └── admin/         # Analytics
 ├── components/
-│   ├── layout/            # Navbar, Footer, DashboardSidebar
-│   ├── home/              # Hero, Services, Testimonials, etc.
-│   ├── services/          # PricingCards, FAQ, QuoteForm
+│   ├── layout/            # Navbar, Footer, Sidebar
+│   ├── home/              # Hero, Services, Testimonials
+│   ├── services/          # Pricing, FAQ, QuoteForm
 │   ├── appointments/      # AppointmentCard
-│   ├── admin/             # Charts, tables, actions
-│   ├── payments/          # Stripe payment form
-│   └── ui/                # ChatWidget, MarkAllRead, etc.
+│   ├── admin/             # Charts, tables
+│   └── ui/                # Shared UI components
 ├── lib/
-│   ├── supabase/          # client.ts, server.ts, middleware.ts
-│   ├── stripe/            # Payment intents, customers, refunds
+│   ├── supabase/          # client, server, middleware
+│   ├── stripe/            # Payment helpers
 │   ├── twilio/            # SMS templates
-│   ├── google/            # Calendar OAuth + event management
-│   └── weather/           # Open-Meteo API
+│   ├── google/            # Calendar OAuth
+│   └── weather/           # Open-Meteo
 └── types/
     └── index.ts           # Full TypeScript types
 ```
 
 ---
 
-## Deployment to Vercel
+## Deployment
 
 ```bash
-npm install -g vercel
 vercel --prod
 ```
 
-In Vercel dashboard:
-1. Add all environment variables from `.env.local`
-2. Change `GOOGLE_REDIRECT_URI` to your production URL
-3. Update Stripe webhook endpoint to `https://yourdomain.com/api/webhooks/stripe`
-4. The `vercel.json` cron job will automatically run SMS reminders every 30 minutes
+In Vercel dashboard, add all env vars from `.env.local`, update `GOOGLE_REDIRECT_URI` and your Stripe webhook endpoint to your production domain. The `vercel.json` cron job runs SMS reminders every 30 minutes automatically.
 
 ---
 
-## Creating Your First Admin User
+## First Admin User
 
-After signing up normally:
+After signing up through the app, promote your account in Supabase SQL Editor:
 
 ```sql
--- Run in Supabase SQL editor
 UPDATE profiles SET role = 'admin' WHERE id = 'your-user-uuid';
-
--- To add a worker
-UPDATE profiles SET role = 'worker' WHERE id = 'worker-user-uuid';
-INSERT INTO workers (id, specialties, bio, is_available)
-VALUES ('worker-user-uuid', '{lawn_care,snow_removal}', 'Experienced outdoor specialist.', true);
 ```
 
 ---
 
-## Generating Supabase Types
+## Security
 
-```bash
-npx supabase gen types typescript \
-  --project-id YOUR_PROJECT_ID \
-  > src/types/supabase.ts
-```
-
----
-
-## Security Notes
-
-- All API routes check `supabase.auth.getUser()` before processing
-- Row Level Security (RLS) enforced at DB level — customers can only see their own data
-- Admin routes require `role = 'admin'` in profile
-- Stripe webhook signature verified with `STRIPE_WEBHOOK_SECRET`
-- Cron endpoint protected by `CRON_SECRET` header
-- Passwords handled entirely by Supabase Auth (bcrypt)
+- All API routes validate `supabase.auth.getUser()` before processing
+- Row Level Security (RLS) enforced at the database level
+- Admin routes require `role = 'admin'` in the user profile
+- Stripe webhooks verified with signature header
 - No sensitive keys exposed to the client
+
+---
+
+<div align="center">
+  <sub>Built by <a href="https://github.com/DomainWarrior">DomainWarrior</a></sub>
+</div>
