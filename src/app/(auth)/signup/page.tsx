@@ -78,7 +78,7 @@ export default function SignupPage() {
     <div className="min-h-screen gradient-navy flex items-center justify-center px-4 py-16">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <Link href="/" className="font-display text-gold-DEFAULT text-3xl">ProServ</Link>
+          <Link href="/" className="font-display text-gold text-3xl">ProServ</Link>
           <p className="text-white/50 text-sm mt-2">Create your free customer account</p>
         </div>
 
@@ -131,19 +131,19 @@ export default function SignupPage() {
 
             <div>
               <label className="label">Confirm Password</label>
-              <input type="password" {...register('confirm_password')} placeholder="••••••••" className="input" autoComplete="new-password" />
+              <input type="password" {...register('confirm_password')} placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" className="input" autoComplete="new-password" />
               {errors.confirm_password && <p className="text-xs text-red-500 mt-1">{errors.confirm_password.message}</p>}
             </div>
 
             <button type="submit" disabled={loading} className="btn-navy w-full justify-center py-3 text-base mt-2">
-              {loading ? 'Creating account…' : 'Create Account'}
+              {loading ? 'Creating accountâ€¦' : 'Create Account'}
             </button>
           </form>
 
           <div className="mt-6 pt-6 border-t border-[--gray-100] text-center">
             <p className="text-sm text-[--gray-500]">
               Already have an account?{' '}
-              <Link href="/login" className="text-gold-DEFAULT font-semibold hover:underline">Sign in</Link>
+              <Link href="/login" className="text-gold font-semibold hover:underline">Sign in</Link>
             </p>
           </div>
 

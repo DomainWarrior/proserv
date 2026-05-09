@@ -44,7 +44,7 @@ const testimonials = [
     rating: 4,
     service: 'Handyman',
     date: '3 weeks ago',
-    text: 'Excellent handyman work — fixed my deck, replaced two doors, and patched drywall all in one day. Competitive pricing and no hidden fees. Very happy overall.',
+    text: 'Excellent handyman work â€” fixed my deck, replaced two doors, and patched drywall all in one day. Competitive pricing and no hidden fees. Very happy overall.',
   },
   {
     id: 5,
@@ -78,7 +78,7 @@ export function Testimonials() {
           <p className="section-eyebrow">Customer Love</p>
           <h2 className="section-title">What Our Customers Say</h2>
           <p className="section-subtitle">
-            Real reviews from verified customers across our service areas. 4.9★ average from 2,400+ jobs.
+            Real reviews from verified customers across our service areas. 4.9â˜… average from 2,400+ jobs.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export function Testimonials() {
                   <Star
                     key={i}
                     size={18}
-                    className={i < testimonials[current].rating ? 'text-gold-DEFAULT fill-gold-DEFAULT' : 'text-[--gray-200]'}
+                    className={i < testimonials[current].rating ? 'text-gold fill-gold' : 'text-[--gray-200]'}
                   />
                 ))}
               </div>
@@ -110,21 +110,21 @@ export function Testimonials() {
 
               <div className="flex items-center gap-4">
                 <div
-                  className="w-11 h-11 rounded-full flex items-center justify-center text-gold-DEFAULT font-bold text-sm flex-shrink-0"
+                  className="w-11 h-11 rounded-full flex items-center justify-center text-gold font-bold text-sm flex-shrink-0"
                   style={{ background: testimonials[current].color }}
                 >
                   {testimonials[current].initials}
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-navy-DEFAULT">{testimonials[current].name}</span>
+                    <span className="font-semibold text-navy">{testimonials[current].name}</span>
                     <span className="inline-flex items-center gap-1 text-xs text-brand-green bg-brand-green-light px-2 py-0.5 rounded-full font-semibold">
                       <CheckCircle size={10} />
                       Verified
                     </span>
                   </div>
                   <span className="text-sm text-[--gray-300]">
-                    {testimonials[current].service} · {testimonials[current].date}
+                    {testimonials[current].service} Â· {testimonials[current].date}
                   </span>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export function Testimonials() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-full border border-[--gray-200] flex items-center justify-center hover:bg-navy-DEFAULT hover:text-white hover:border-navy-DEFAULT transition-all"
+              className="w-10 h-10 rounded-full border border-[--gray-200] flex items-center justify-center hover:bg-navy hover:text-white hover:border-navy transition-all"
             >
               <ChevronLeft size={18} />
             </button>
@@ -147,7 +147,7 @@ export function Testimonials() {
                   onClick={() => { setAutoplay(false); setCurrent(i) }}
                   className={cn(
                     'w-2 h-2 rounded-full transition-all',
-                    i === current ? 'bg-gold-DEFAULT w-6' : 'bg-[--gray-200]'
+                    i === current ? 'bg-gold w-6' : 'bg-[--gray-200]'
                   )}
                 />
               ))}
@@ -155,7 +155,7 @@ export function Testimonials() {
 
             <button
               onClick={next}
-              className="w-10 h-10 rounded-full border border-[--gray-200] flex items-center justify-center hover:bg-navy-DEFAULT hover:text-white hover:border-navy-DEFAULT transition-all"
+              className="w-10 h-10 rounded-full border border-[--gray-200] flex items-center justify-center hover:bg-navy hover:text-white hover:border-navy transition-all"
             >
               <ChevronRight size={18} />
             </button>

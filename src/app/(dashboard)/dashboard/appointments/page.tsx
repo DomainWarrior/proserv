@@ -28,7 +28,7 @@ export default async function AppointmentsPage() {
     <div>
       <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">Appointments</h1>
+          <h1 className="font-display text-3xl text-navy">Appointments</h1>
           <p className="text-[--gray-500] text-sm mt-1">Manage all your upcoming and past bookings.</p>
         </div>
         <Link href="/book" className="btn-primary">+ New Booking</Link>

@@ -16,7 +16,7 @@ const data = [
 export function RevenueChart() {
   return (
     <div className="card p-6">
-      <h3 className="font-semibold text-navy-DEFAULT mb-4">Revenue (6 months)</h3>
+      <h3 className="font-semibold text-navy mb-4">Revenue (6 months)</h3>
       <ResponsiveContainer width="100%" height={220}>
         <BarChart data={data} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#f0ede8" />

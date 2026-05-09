@@ -7,12 +7,12 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = { title: 'Notifications' }
 
 const typeIcon: Record<string, string> = {
-  appointment_confirmed: '✅',
-  appointment_reminder:  '⏰',
-  appointment_cancelled: '❌',
-  payment_received:      '💳',
-  review_request:        '⭐',
-  general:               '📣',
+  appointment_confirmed: 'âœ…',
+  appointment_reminder:  'â°',
+  appointment_cancelled: 'âŒ',
+  payment_received:      'ðŸ’³',
+  review_request:        'â­',
+  general:               'ðŸ“£',
 }
 
 export default async function NotificationsPage() {
@@ -32,7 +32,7 @@ export default async function NotificationsPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">Notifications</h1>
+          <h1 className="font-display text-3xl text-navy">Notifications</h1>
           <p className="text-[--gray-500] text-sm mt-1">{unread} unread</p>
         </div>
         {unread > 0 && <MarkAllRead userId={user!.id} />}
@@ -48,14 +48,14 @@ export default async function NotificationsPage() {
 
         {notifications?.map(n => (
           <div key={n.id} className={`p-5 flex gap-4 items-start transition-colors ${!n.is_read ? 'bg-gold-pale/40' : ''}`}>
-            <div className="text-xl flex-shrink-0 mt-0.5">{typeIcon[n.type] ?? '📣'}</div>
+            <div className="text-xl flex-shrink-0 mt-0.5">{typeIcon[n.type] ?? 'ðŸ“£'}</div>
             <div className="flex-1 min-w-0">
               <div className="flex items-start gap-2">
-                <p className={`text-sm font-medium ${!n.is_read ? 'text-navy-DEFAULT' : 'text-[--gray-700]'}`}>
+                <p className={`text-sm font-medium ${!n.is_read ? 'text-navy' : 'text-[--gray-700]'}`}>
                   {n.title}
                 </p>
                 {!n.is_read && (
-                  <span className="w-2 h-2 rounded-full bg-gold-DEFAULT flex-shrink-0 mt-1.5" />
+                  <span className="w-2 h-2 rounded-full bg-gold flex-shrink-0 mt-1.5" />
                 )}
               </div>
               {n.body && <p className="text-xs text-[--gray-500] mt-0.5 leading-relaxed">{n.body}</p>}

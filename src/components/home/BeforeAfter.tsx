@@ -3,20 +3,20 @@ export function BeforeAfter() {
     {
       title: 'Complete Lawn Restoration',
       desc: 'Overgrown yard transformed in one visit',
-      before: { bg: 'from-yellow-800 to-yellow-900', emoji: '🌾' },
-      after:  { bg: 'from-green-700 to-green-900',   emoji: '🌿' },
+      before: { bg: 'from-yellow-800 to-yellow-900', emoji: 'ðŸŒ¾' },
+      after:  { bg: 'from-green-700 to-green-900',   emoji: 'ðŸŒ¿' },
     },
     {
       title: 'Exterior Window Deep Clean',
       desc: '12 windows, crystal clear',
-      before: { bg: 'from-purple-800 to-purple-900', emoji: '🏚️' },
-      after:  { bg: 'from-blue-600 to-blue-800',     emoji: '🏠' },
+      before: { bg: 'from-purple-800 to-purple-900', emoji: 'ðŸšï¸' },
+      after:  { bg: 'from-blue-600 to-blue-800',     emoji: 'ðŸ ' },
     },
     {
       title: 'Shrub & Tree Shaping',
       desc: 'Overgrown trees reshaped perfectly',
-      before: { bg: 'from-amber-800 to-amber-900',   emoji: '🪵' },
-      after:  { bg: 'from-emerald-700 to-emerald-900', emoji: '🌳' },
+      before: { bg: 'from-amber-800 to-amber-900',   emoji: 'ðŸªµ' },
+      after:  { bg: 'from-emerald-700 to-emerald-900', emoji: 'ðŸŒ³' },
     },
   ]
 
@@ -44,12 +44,12 @@ export function BeforeAfter() {
                 {/* Divider */}
                 <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-white -translate-x-1/2 z-10 flex items-center justify-center">
                   <div className="w-7 h-7 rounded-full bg-white shadow flex items-center justify-center text-xs font-bold text-[--gray-500]">
-                    ↔
+                    â†”
                   </div>
                 </div>
               </div>
               <div className="p-4 bg-white">
-                <h4 className="font-semibold text-navy-DEFAULT text-sm">{item.title}</h4>
+                <h4 className="font-semibold text-navy text-sm">{item.title}</h4>
                 <p className="text-xs text-[--gray-300] mt-0.5">{item.desc}</p>
               </div>
             </div>

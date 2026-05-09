@@ -21,7 +21,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-gold-DEFAULT/15 border border-gold-DEFAULT/30 text-gold-light px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-8"
+          className="inline-flex items-center gap-2 bg-gold/15 border border-gold/30 text-gold-light px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-8"
         >
           <Star size={12} fill="currentColor" />
           Rated #1 Local Service in Your Area
@@ -36,7 +36,7 @@ export function Hero() {
         >
           Professional Service,
           <br />
-          <em className="text-gold-DEFAULT not-italic">Delivered Right</em>
+          <em className="text-gold not-italic">Delivered Right</em>
         </motion.h1>
 
         {/* Subtext */}
@@ -46,7 +46,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lg text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          From lawn care to deep cleaning — we handle every job with precision, care,
+          From lawn care to deep cleaning â€” we handle every job with precision, care,
           and a 100% satisfaction guarantee. Instant booking, no hassle.
         </motion.p>
 
@@ -59,10 +59,10 @@ export function Hero() {
         >
           <a
             href="tel:+15551234567"
-            className="inline-flex items-center justify-center gap-3 bg-gold-DEFAULT text-navy-DEFAULT px-8 py-4 rounded-xl text-lg font-bold hover:bg-gold-light transition-all hover:-translate-y-1 shadow-[0_4px_20px_rgba(201,168,76,0.4)]"
+            className="inline-flex items-center justify-center gap-3 bg-gold text-navy px-8 py-4 rounded-xl text-lg font-bold hover:bg-gold-light transition-all hover:-translate-y-1 shadow-[0_4px_20px_rgba(201,168,76,0.4)]"
           >
             <Phone size={20} />
-            Call Now — (555) 123-4567
+            Call Now â€” (555) 123-4567
           </a>
           <Link
             href="/services"
@@ -81,13 +81,13 @@ export function Hero() {
           className="flex items-center justify-center gap-6 mt-10 text-white/50 text-sm flex-wrap"
         >
           <span className="flex items-center gap-2">
-            <span className="text-green-400">✓</span> Licensed & Insured
+            <span className="text-green-400">âœ“</span> Licensed & Insured
           </span>
           <span className="flex items-center gap-2">
-            <span className="text-green-400">✓</span> Background-checked Pros
+            <span className="text-green-400">âœ“</span> Background-checked Pros
           </span>
           <span className="flex items-center gap-2">
-            <span className="text-green-400">✓</span> 100% Satisfaction Guarantee
+            <span className="text-green-400">âœ“</span> 100% Satisfaction Guarantee
           </span>
         </motion.div>
       </div>

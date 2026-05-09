@@ -27,7 +27,7 @@ export function PendingActions({ pendingCount }: Props) {
 
   return (
     <div className="card p-6">
-      <h3 className="font-semibold text-navy-DEFAULT mb-4">Pending Actions</h3>
+      <h3 className="font-semibold text-navy mb-4">Pending Actions</h3>
       <div className="space-y-3">
         {actions.map(a => (
           <Link
@@ -38,8 +38,8 @@ export function PendingActions({ pendingCount }: Props) {
             <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${a.urgent ? 'bg-red-50' : 'bg-[--gray-100]'}`}>
               <a.icon size={17} className={a.urgent ? 'text-red-600' : 'text-[--gray-300]'} />
             </div>
-            <p className="text-sm text-navy-DEFAULT flex-1">{a.label}</p>
-            <span className="text-xs text-[--gray-300] group-hover:text-gold-DEFAULT transition-colors">→</span>
+            <p className="text-sm text-navy flex-1">{a.label}</p>
+            <span className="text-xs text-[--gray-300] group-hover:text-gold transition-colors">â†’</span>
           </Link>
         ))}
       </div>

@@ -20,7 +20,7 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: 'ProServ — Professional Local Services',
+    default: 'ProServ â€” Professional Local Services',
     template: '%s | ProServ',
   },
   description:
@@ -46,7 +46,7 @@ export default function RootLayout({
       className={`${dmSans.variable} ${dmSerif.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-sans antialiased bg-off-white text-navy-DEFAULT">
+      <body className="font-sans antialiased bg-off-white text-navy">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
           <Toaster

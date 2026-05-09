@@ -9,7 +9,7 @@ const integrations = [
     id: 'google-calendar',
     name: 'Google Calendar',
     description: 'Two-way sync for all appointments',
-    icon: '📅',
+    icon: 'ðŸ“…',
     status: 'connected',
     action: '/api/calendar/connect',
   },
@@ -17,7 +17,7 @@ const integrations = [
     id: 'stripe',
     name: 'Stripe Payments',
     description: 'Accept cards, ACH, and recurring billing',
-    icon: '💳',
+    icon: 'ðŸ’³',
     status: 'connected',
     action: 'https://dashboard.stripe.com',
   },
@@ -25,7 +25,7 @@ const integrations = [
     id: 'twilio',
     name: 'Twilio SMS',
     description: 'Automated text reminders and notifications',
-    icon: '💬',
+    icon: 'ðŸ’¬',
     status: 'connected',
     action: 'https://console.twilio.com',
   },
@@ -33,7 +33,7 @@ const integrations = [
     id: 'google-reviews',
     name: 'Google Reviews',
     description: 'Display Google reviews on your website',
-    icon: '⭐',
+    icon: 'â­',
     status: 'not_connected',
     action: '#',
   },
@@ -41,7 +41,7 @@ const integrations = [
     id: 'resend',
     name: 'Email (Resend)',
     description: 'Transactional email delivery',
-    icon: '📧',
+    icon: 'ðŸ“§',
     status: 'connected',
     action: 'https://resend.com',
   },
@@ -60,14 +60,14 @@ export default function AdminSettingsPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-display text-3xl text-navy-DEFAULT">Business Settings</h1>
+        <h1 className="font-display text-3xl text-navy">Business Settings</h1>
         <p className="text-[--gray-500] text-sm mt-1">Configure your ProServ platform.</p>
       </div>
 
       <div className="max-w-2xl space-y-6">
         {/* Business info */}
         <div className="card p-6">
-          <h3 className="font-semibold text-navy-DEFAULT mb-5">Business Information</h3>
+          <h3 className="font-semibold text-navy mb-5">Business Information</h3>
           <div className="space-y-4">
             <div>
               <label className="label">Business Name</label>
@@ -89,7 +89,7 @@ export default function AdminSettingsPage() {
             </div>
             <div>
               <label className="label">Business Hours</label>
-              <input defaultValue="Mon–Sat, 7:00 AM – 7:00 PM EST" className="input" />
+              <input defaultValue="Monâ€“Sat, 7:00 AM â€“ 7:00 PM EST" className="input" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -102,14 +102,14 @@ export default function AdminSettingsPage() {
               </div>
             </div>
             <button onClick={handleSave} disabled={saving} className="btn-navy">
-              {saving ? 'Saving…' : 'Save Settings'}
+              {saving ? 'Savingâ€¦' : 'Save Settings'}
             </button>
           </div>
         </div>
 
         {/* Integrations */}
         <div className="card p-6">
-          <h3 className="font-semibold text-navy-DEFAULT mb-5">Integrations</h3>
+          <h3 className="font-semibold text-navy mb-5">Integrations</h3>
           <div className="space-y-3">
             {integrations.map(intg => (
               <div key={intg.id} className="flex items-center gap-4 p-3 rounded-xl hover:bg-[--off-white] transition-colors">
@@ -118,7 +118,7 @@ export default function AdminSettingsPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <p className="font-semibold text-sm text-navy-DEFAULT">{intg.name}</p>
+                    <p className="font-semibold text-sm text-navy">{intg.name}</p>
                     {intg.status === 'connected'
                       ? <CheckCircle size={13} className="text-brand-green" />
                       : <AlertCircle size={13} className="text-amber-500" />
@@ -141,8 +141,8 @@ export default function AdminSettingsPage() {
         </div>
 
         {/* Cron info */}
-        <div className="card p-6 bg-navy-DEFAULT text-white">
-          <h3 className="font-semibold mb-3">⏱ Automated SMS Reminders</h3>
+        <div className="card p-6 bg-navy text-white">
+          <h3 className="font-semibold mb-3">â± Automated SMS Reminders</h3>
           <p className="text-sm text-white/70 mb-4">
             Add this to your <code className="bg-white/10 px-1.5 py-0.5 rounded text-xs">vercel.json</code> to enable automatic SMS reminders:
           </p>

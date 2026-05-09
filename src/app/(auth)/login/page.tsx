@@ -54,7 +54,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link href="/" className="font-display text-gold-DEFAULT text-3xl">ProServ</Link>
+          <Link href="/" className="font-display text-gold text-3xl">ProServ</Link>
           <p className="text-white/50 text-sm mt-2">Sign in to your account</p>
         </div>
 
@@ -75,7 +75,7 @@ export default function LoginPage() {
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <label className="label mb-0">Password</label>
-                <Link href="/reset-password" className="text-xs text-gold-DEFAULT hover:underline">
+                <Link href="/reset-password" className="text-xs text-gold hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -83,14 +83,14 @@ export default function LoginPage() {
                 <input
                   type={showPass ? 'text' : 'password'}
                   {...register('password')}
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   className="input pr-10"
                   autoComplete="current-password"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPass(!showPass)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[--gray-300] hover:text-navy-DEFAULT"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[--gray-300] hover:text-navy"
                 >
                   {showPass ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -103,14 +103,14 @@ export default function LoginPage() {
               disabled={loading}
               className="btn-navy w-full justify-center py-3 text-base"
             >
-              {loading ? 'Signing in…' : 'Sign In'}
+              {loading ? 'Signing inâ€¦' : 'Sign In'}
             </button>
           </form>
 
           <div className="mt-6 pt-6 border-t border-[--gray-100] text-center">
             <p className="text-sm text-[--gray-500]">
               Don't have an account?{' '}
-              <Link href="/signup" className="text-gold-DEFAULT font-semibold hover:underline">
+              <Link href="/signup" className="text-gold font-semibold hover:underline">
                 Create one free
               </Link>
             </p>

@@ -80,30 +80,30 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold-DEFAULT text-navy-DEFAULT
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold text-navy
            rounded-xl font-semibold text-sm transition-all duration-200
            hover:bg-gold-light hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:ring-offset-2
+           focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2
            disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-navy-DEFAULT
-           border border-navy-DEFAULT/20 rounded-xl font-medium text-sm
-           transition-all duration-200 hover:bg-navy-DEFAULT/5
-           focus:outline-none focus:ring-2 focus:ring-navy-DEFAULT/30;
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-transparent text-navy
+           border border-navy/20 rounded-xl font-medium text-sm
+           transition-all duration-200 hover:bg-navy/5
+           focus:outline-none focus:ring-2 focus:ring-navy/30;
   }
 
   .btn-navy {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-navy-DEFAULT text-white
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-navy text-white
            rounded-xl font-semibold text-sm transition-all duration-200
            hover:bg-navy-mid hover:-translate-y-0.5
-           focus:outline-none focus:ring-2 focus:ring-navy-DEFAULT;
+           focus:outline-none focus:ring-2 focus:ring-navy;
   }
 
   .btn-ghost {
     @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium
-           text-[--gray-500] hover:text-navy-DEFAULT hover:bg-[--gray-100]
+           text-[--gray-500] hover:text-navy hover:bg-[--gray-100]
            rounded-lg transition-all duration-150;
   }
 
@@ -115,7 +115,7 @@
   .input {
     @apply w-full px-4 py-2.5 border border-[--gray-200] rounded-lg text-sm
            font-sans text-[--navy] bg-white placeholder:text-[--gray-300]
-           focus:outline-none focus:border-gold-DEFAULT focus:ring-1 focus:ring-gold-DEFAULT/30
+           focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30
            transition-colors duration-150
            dark:bg-[--gray-100] dark:border-[--gray-200] dark:text-[--navy];
   }
@@ -131,7 +131,7 @@
 
   .card-hover {
     @apply card transition-all duration-200 hover:-translate-y-1 hover:shadow-md
-           hover:border-gold-DEFAULT cursor-pointer;
+           hover:border-gold cursor-pointer;
   }
 
   .status-badge {
@@ -145,15 +145,15 @@
   }
 
   .sidebar-item.active {
-    @apply bg-gold-DEFAULT/15 text-gold-DEFAULT;
+    @apply bg-gold/15 text-gold;
   }
 
   .section-eyebrow {
-    @apply text-xs font-semibold tracking-widest uppercase text-gold-DEFAULT mb-2;
+    @apply text-xs font-semibold tracking-widest uppercase text-gold mb-2;
   }
 
   .section-title {
-    @apply font-display text-3xl md:text-4xl text-navy-DEFAULT mb-3;
+    @apply font-display text-3xl md:text-4xl text-navy mb-3;
   }
 
   .section-subtitle {

@@ -46,7 +46,7 @@ export default async function DashboardPage() {
       {/* Header */}
       <div className="flex items-start justify-between mb-8 flex-wrap gap-4">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">{greeting}, {name}</h1>
+          <h1 className="font-display text-3xl text-navy">{greeting}, {name}</h1>
           <p className="text-[--gray-500] text-sm mt-1">
             {format(new Date(), 'EEEE, MMMM d, yyyy')}
           </p>
@@ -61,15 +61,15 @@ export default async function DashboardPage() {
         {[
           { label: 'Upcoming', value: upcoming?.length ?? 0, icon: CalendarDays, sub: 'appointments' },
           { label: 'Total Jobs', value: totalJobs ?? 0, icon: CheckCircle, sub: 'completed' },
-          { label: 'Rating Given', value: '5.0★', icon: Star, sub: 'average' },
+          { label: 'Rating Given', value: '5.0â˜…', icon: Star, sub: 'average' },
           { label: 'Member Since', value: format(new Date(profile?.created_at ?? Date.now()), 'MMM yyyy'), icon: DollarSign, sub: 'account age' },
         ].map(m => (
           <div key={m.label} className="card p-5">
             <div className="flex items-center gap-2 mb-2">
-              <m.icon size={16} className="text-gold-DEFAULT" />
+              <m.icon size={16} className="text-gold" />
               <span className="text-xs font-semibold text-[--gray-300] uppercase tracking-wider">{m.label}</span>
             </div>
-            <div className="font-display text-2xl text-navy-DEFAULT">{m.value}</div>
+            <div className="font-display text-2xl text-navy">{m.value}</div>
             <div className="text-xs text-[--gray-300] mt-0.5">{m.sub}</div>
           </div>
         ))}
@@ -78,9 +78,9 @@ export default async function DashboardPage() {
       {/* Upcoming appointments */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-semibold text-navy-DEFAULT">Upcoming Appointments</h2>
-          <Link href="/dashboard/appointments" className="text-sm text-gold-DEFAULT hover:underline">
-            View all →
+          <h2 className="font-semibold text-navy">Upcoming Appointments</h2>
+          <Link href="/dashboard/appointments" className="text-sm text-gold hover:underline">
+            View all â†’
           </Link>
         </div>
 
@@ -93,13 +93,13 @@ export default async function DashboardPage() {
         ) : (
           <div className="space-y-3">
             {upcoming?.map(apt => (
-              <div key={apt.id} className="card p-4 flex items-center gap-4 hover:border-gold-DEFAULT transition-colors">
-                <div className="bg-navy-DEFAULT text-white rounded-xl px-3 py-2 text-center flex-shrink-0 min-w-[52px]">
+              <div key={apt.id} className="card p-4 flex items-center gap-4 hover:border-gold transition-colors">
+                <div className="bg-navy text-white rounded-xl px-3 py-2 text-center flex-shrink-0 min-w-[52px]">
                   <div className="font-display text-xl leading-none">{format(new Date(apt.scheduled_at), 'd')}</div>
                   <div className="text-xs uppercase opacity-70">{format(new Date(apt.scheduled_at), 'MMM')}</div>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-navy-DEFAULT text-sm truncate">
+                  <p className="font-semibold text-navy text-sm truncate">
                     {(apt.service as any)?.name}
                   </p>
                   <p className="text-xs text-[--gray-500]">
@@ -118,9 +118,9 @@ export default async function DashboardPage() {
       {/* Recent notifications */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-semibold text-navy-DEFAULT">Recent Notifications</h2>
-          <Link href="/dashboard/notifications" className="text-sm text-gold-DEFAULT hover:underline">
-            View all →
+          <h2 className="font-semibold text-navy">Recent Notifications</h2>
+          <Link href="/dashboard/notifications" className="text-sm text-gold hover:underline">
+            View all â†’
           </Link>
         </div>
         <div className="card divide-y divide-[--gray-100]">
@@ -129,9 +129,9 @@ export default async function DashboardPage() {
           )}
           {notifications?.map(n => (
             <div key={n.id} className="p-4 flex gap-3 items-start">
-              <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${n.is_read ? 'bg-[--gray-200]' : 'bg-gold-DEFAULT'}`} />
+              <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${n.is_read ? 'bg-[--gray-200]' : 'bg-gold'}`} />
               <div>
-                <p className="text-sm font-medium text-navy-DEFAULT">{n.title}</p>
+                <p className="text-sm font-medium text-navy">{n.title}</p>
                 {n.body && <p className="text-xs text-[--gray-500] mt-0.5">{n.body}</p>}
                 <p className="text-xs text-[--gray-300] mt-1">
                   {formatDistanceToNow(new Date(n.created_at), { addSuffix: true })}

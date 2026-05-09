@@ -156,13 +156,13 @@ export default function BookPage() {
           <div className="flex items-center gap-3 mb-8">
             {['Booking Details', 'Payment'].map((label, i) => (
               <div key={label} className="flex items-center gap-2">
-                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${step >= i + 1 ? 'bg-navy-DEFAULT text-white' : 'bg-[--gray-200] text-[--gray-500]'}`}>
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${step >= i + 1 ? 'bg-navy text-white' : 'bg-[--gray-200] text-[--gray-500]'}`}>
                   {i + 1}
                 </div>
-                <span className={`text-sm font-medium ${step >= i + 1 ? 'text-navy-DEFAULT' : 'text-[--gray-300]'}`}>
+                <span className={`text-sm font-medium ${step >= i + 1 ? 'text-navy' : 'text-[--gray-300]'}`}>
                   {label}
                 </span>
-                {i < 1 && <span className="text-[--gray-200] mx-1">→</span>}
+                {i < 1 && <span className="text-[--gray-200] mx-1">â†’</span>}
               </div>
             ))}
           </div>
@@ -170,7 +170,7 @@ export default function BookPage() {
           {step === 1 && (
             <form onSubmit={handleSubmit(onSubmit)} className="card p-8 space-y-6">
               <div>
-                <h1 className="font-display text-2xl text-navy-DEFAULT mb-1">Book a Service</h1>
+                <h1 className="font-display text-2xl text-navy mb-1">Book a Service</h1>
                 <p className="text-sm text-[--gray-500]">Fill in your details and we'll get you scheduled.</p>
               </div>
 
@@ -178,7 +178,7 @@ export default function BookPage() {
               <div className="form-group">
                 <label className="label">Service</label>
                 <select {...register('service_id')} className="input">
-                  <option value="">Select a service…</option>
+                  <option value="">Select a serviceâ€¦</option>
                   {services.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
                 </select>
                 {errors.service_id && <p className="text-xs text-red-500 mt-1">{errors.service_id.message}</p>}
@@ -192,9 +192,9 @@ export default function BookPage() {
                     {selectedService.packages.map(pkg => (
                       <label key={pkg.id} className="cursor-pointer">
                         <input type="radio" {...register('package_id')} value={pkg.id} className="sr-only" />
-                        <div className="card p-3 text-center hover:border-gold-DEFAULT transition-colors has-[:checked]:border-gold-DEFAULT has-[:checked]:bg-gold-pale">
+                        <div className="card p-3 text-center hover:border-gold transition-colors has-[:checked]:border-gold has-[:checked]:bg-gold-pale">
                           <div className="font-semibold text-sm">{pkg.name}</div>
-                          <div className="text-gold-DEFAULT font-bold">${pkg.price}</div>
+                          <div className="text-gold font-bold">${pkg.price}</div>
                         </div>
                       </label>
                     ))}
@@ -217,7 +217,7 @@ export default function BookPage() {
                 <div className="form-group">
                   <label className="label">Time</label>
                   <select {...register('scheduled_time')} className="input">
-                    <option value="">Select…</option>
+                    <option value="">Selectâ€¦</option>
                     {timeSlots.map(t => <option key={t}>{t}</option>)}
                   </select>
                   {errors.scheduled_time && <p className="text-xs text-red-500 mt-1">{errors.scheduled_time.message}</p>}
@@ -248,11 +248,11 @@ export default function BookPage() {
               {/* Notes */}
               <div className="form-group">
                 <label className="label">Special Instructions (optional)</label>
-                <textarea {...register('notes')} className="input" rows={3} placeholder="Gate code, pets, specific areas to focus on…" />
+                <textarea {...register('notes')} className="input" rows={3} placeholder="Gate code, pets, specific areas to focus onâ€¦" />
               </div>
 
               <button type="submit" className="btn-primary w-full justify-center text-base py-3">
-                Continue to Payment →
+                Continue to Payment â†’
               </button>
 
               {!user && (
@@ -265,13 +265,13 @@ export default function BookPage() {
 
           {step === 2 && clientSecret && (
             <div className="card p-8">
-              <h2 className="font-display text-2xl text-navy-DEFAULT mb-2">Secure Payment</h2>
+              <h2 className="font-display text-2xl text-navy mb-2">Secure Payment</h2>
               <p className="text-sm text-[--gray-500] mb-6">Your payment is encrypted and secure. Powered by Stripe.</p>
               <Elements stripe={stripePromise} options={{ clientSecret }}>
                 <PaymentForm
                   clientSecret={clientSecret}
                   onSuccess={() => {
-                    toast.success('🎉 Booking confirmed! Check your SMS for details.')
+                    toast.success('ðŸŽ‰ Booking confirmed! Check your SMS for details.')
                     router.push('/dashboard')
                   }}
                 />

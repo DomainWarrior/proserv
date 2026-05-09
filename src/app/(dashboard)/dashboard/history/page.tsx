@@ -29,9 +29,9 @@ export default async function HistoryPage() {
     <div>
       <div className="flex items-start justify-between mb-8 flex-wrap gap-4">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">Service History</h1>
+          <h1 className="font-display text-3xl text-navy">Service History</h1>
           <p className="text-[--gray-500] text-sm mt-1">
-            {appointments?.length ?? 0} past services · {formatCurrency(totalSpent)} total spent
+            {appointments?.length ?? 0} past services Â· {formatCurrency(totalSpent)} total spent
           </p>
         </div>
       </div>
@@ -58,22 +58,22 @@ export default async function HistoryPage() {
                     <td className="px-5 py-4 text-[--gray-700] whitespace-nowrap">
                       {format(new Date(apt.scheduled_at), 'MMM d, yyyy')}
                     </td>
-                    <td className="px-5 py-4 font-medium text-navy-DEFAULT">
+                    <td className="px-5 py-4 font-medium text-navy">
                       {(apt.service as any)?.name}
                     </td>
                     <td className="px-5 py-4 text-[--gray-500]">
-                      {(apt.worker as any)?.full_name ?? '—'}
+                      {(apt.worker as any)?.full_name ?? 'â€”'}
                     </td>
                     <td className="px-5 py-4">
                       <span className={`status-badge ${getStatusColor(apt.status)}`}>{apt.status}</span>
                     </td>
-                    <td className="px-5 py-4 font-medium text-navy-DEFAULT">
-                      {apt.price ? formatCurrency(apt.price) : '—'}
+                    <td className="px-5 py-4 font-medium text-navy">
+                      {apt.price ? formatCurrency(apt.price) : 'â€”'}
                     </td>
                     <td className="px-5 py-4">
                       {apt.status === 'completed' ? (
-                        <button className="text-xs text-gold-DEFAULT hover:underline">Leave Review</button>
-                      ) : '—'}
+                        <button className="text-xs text-gold hover:underline">Leave Review</button>
+                      ) : 'â€”'}
                     </td>
                   </tr>
                 ))}

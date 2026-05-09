@@ -52,12 +52,12 @@ export default function ProfilePage() {
     else { toast.success('Password updated!'); resetPass() }
   }
 
-  if (!profile) return <div className="text-[--gray-300] text-sm">Loading…</div>
+  if (!profile) return <div className="text-[--gray-300] text-sm">Loadingâ€¦</div>
 
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-display text-3xl text-navy-DEFAULT">My Profile</h1>
+        <h1 className="font-display text-3xl text-navy">My Profile</h1>
         <p className="text-[--gray-500] text-sm mt-1">Manage your personal information and preferences.</p>
       </div>
 
@@ -65,12 +65,12 @@ export default function ProfilePage() {
         {/* Avatar */}
         <div className="card p-6">
           <div className="flex items-center gap-5 mb-6">
-            <div className="w-16 h-16 rounded-full bg-navy-DEFAULT flex items-center justify-center text-gold-DEFAULT text-xl font-bold font-display">
+            <div className="w-16 h-16 rounded-full bg-navy flex items-center justify-center text-gold text-xl font-bold font-display">
               {getInitials(profile.full_name ?? profile.id)}
             </div>
             <div>
-              <p className="font-semibold text-navy-DEFAULT">{profile.full_name}</p>
-              <p className="text-sm text-[--gray-300]">Customer · Member since {new Date(profile.created_at).getFullYear()}</p>
+              <p className="font-semibold text-navy">{profile.full_name}</p>
+              <p className="text-sm text-[--gray-300]">Customer Â· Member since {new Date(profile.created_at).getFullYear()}</p>
             </div>
           </div>
 
@@ -108,17 +108,17 @@ export default function ProfilePage() {
             <div className="pt-4 border-t border-[--gray-100]">
               <p className="text-xs font-bold uppercase tracking-widest text-[--gray-300] mb-3">Notifications</p>
               <label className="flex items-center gap-3 cursor-pointer mb-2">
-                <input type="checkbox" {...register('sms_notifications')} className="w-4 h-4 accent-gold-DEFAULT" />
-                <span className="text-sm text-navy-DEFAULT">SMS reminders and updates</span>
+                <input type="checkbox" {...register('sms_notifications')} className="w-4 h-4 accent-gold" />
+                <span className="text-sm text-navy">SMS reminders and updates</span>
               </label>
               <label className="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" {...register('email_notifications')} className="w-4 h-4 accent-gold-DEFAULT" />
-                <span className="text-sm text-navy-DEFAULT">Email reminders and updates</span>
+                <input type="checkbox" {...register('email_notifications')} className="w-4 h-4 accent-gold" />
+                <span className="text-sm text-navy">Email reminders and updates</span>
               </label>
             </div>
 
             <button type="submit" disabled={saving} className="btn-navy">
-              {saving ? 'Saving…' : 'Save Changes'}
+              {saving ? 'Savingâ€¦' : 'Save Changes'}
             </button>
           </form>
         </div>
@@ -126,18 +126,18 @@ export default function ProfilePage() {
         {/* Change password */}
         <div className="card p-6">
           <div className="flex items-center gap-2 mb-5">
-            <Lock size={16} className="text-gold-DEFAULT" />
-            <h3 className="font-semibold text-navy-DEFAULT">Change Password</h3>
+            <Lock size={16} className="text-gold" />
+            <h3 className="font-semibold text-navy">Change Password</h3>
           </div>
           <form onSubmit={submitPass(onChangePass)} className="space-y-4">
             <div>
               <label className="label">New Password</label>
-              <input type="password" {...regPass('new_password', { minLength: { value: 8, message: 'Min 8 characters' } })} placeholder="••••••••" className="input" />
+              <input type="password" {...regPass('new_password', { minLength: { value: 8, message: 'Min 8 characters' } })} placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" className="input" />
               {passErrors.new_password && <p className="text-xs text-red-500 mt-1">{passErrors.new_password.message as string}</p>}
             </div>
             <div>
               <label className="label">Confirm New Password</label>
-              <input type="password" {...regPass('confirm')} placeholder="••••••••" className="input" />
+              <input type="password" {...regPass('confirm')} placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" className="input" />
             </div>
             <button type="submit" className="btn-ghost border border-[--gray-200]">Update Password</button>
           </form>
@@ -147,10 +147,10 @@ export default function ProfilePage() {
         <div className="card p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-semibold text-navy-DEFAULT mb-0.5">Google Calendar Sync</p>
+              <p className="font-semibold text-navy mb-0.5">Google Calendar Sync</p>
               <p className="text-sm text-[--gray-500]">Auto-add appointments to your Google Calendar</p>
             </div>
-            <a href="/api/calendar/connect" className="btn-primary text-sm">Connect →</a>
+            <a href="/api/calendar/connect" className="btn-primary text-sm">Connect â†’</a>
           </div>
         </div>
       </div>

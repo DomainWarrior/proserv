@@ -74,11 +74,11 @@ export function AppointmentCard({ appointment: apt, isPast = false }: Props) {
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
             <div>
-              <h3 className="font-semibold text-navy-DEFAULT">{service?.name}</h3>
+              <h3 className="font-semibold text-navy">{service?.name}</h3>
               <div className="flex flex-wrap gap-3 mt-1.5">
                 <span className="flex items-center gap-1 text-xs text-[--gray-500]">
                   <Clock size={12} /> {format(new Date(apt.scheduled_at), 'h:mm a')}
-                  {service?.duration_hours && ` — ${format(new Date(new Date(apt.scheduled_at).getTime() + service.duration_hours * 3600000), 'h:mm a')}`}
+                  {service?.duration_hours && ` â€” ${format(new Date(new Date(apt.scheduled_at).getTime() + service.duration_hours * 3600000), 'h:mm a')}`}
                 </span>
                 {worker?.full_name && (
                   <span className="flex items-center gap-1 text-xs text-[--gray-500]">
@@ -96,7 +96,7 @@ export function AppointmentCard({ appointment: apt, isPast = false }: Props) {
                 {apt.status}
               </span>
               {apt.price && (
-                <span className="text-sm font-semibold text-navy-DEFAULT">
+                <span className="text-sm font-semibold text-navy">
                   {formatCurrency(apt.price)}
                 </span>
               )}

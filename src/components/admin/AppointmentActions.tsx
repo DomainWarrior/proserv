@@ -60,7 +60,7 @@ export function AppointmentActions({ appointmentId, currentStatus, workers }: Pr
         <button
           onClick={() => update({ status: 'completed' })}
           disabled={loading}
-          className="text-xs px-2 py-1 bg-navy-DEFAULT text-white rounded hover:bg-navy-mid transition-colors"
+          className="text-xs px-2 py-1 bg-navy text-white rounded hover:bg-navy-mid transition-colors"
         >
           Complete
         </button>
@@ -70,10 +70,10 @@ export function AppointmentActions({ appointmentId, currentStatus, workers }: Pr
       <select
         onChange={e => e.target.value && update({ worker_id: e.target.value })}
         disabled={loading}
-        className="text-xs border border-[--gray-200] rounded px-1.5 py-1 bg-white text-navy-DEFAULT max-w-[120px]"
+        className="text-xs border border-[--gray-200] rounded px-1.5 py-1 bg-white text-navy max-w-[120px]"
         defaultValue=""
       >
-        <option value="" disabled>Assign…</option>
+        <option value="" disabled>Assignâ€¦</option>
         {workers.map(w => (
           <option key={w.id} value={w.id}>
             {w.profile?.full_name ?? 'Unknown'}

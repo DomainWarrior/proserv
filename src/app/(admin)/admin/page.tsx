@@ -38,7 +38,7 @@ export default async function AdminPage() {
   const metrics = [
     { label: 'Monthly Revenue',  value: formatCurrency(revenue),         sub: `${format(now, 'MMMM yyyy')}` },
     { label: 'Jobs This Month',  value: String(jobCount),                sub: 'total appointments' },
-    { label: 'Avg Rating',       value: `${avgRating.toFixed(2)} ★`,     sub: 'from all reviews' },
+    { label: 'Avg Rating',       value: `${avgRating.toFixed(2)} â˜…`,     sub: 'from all reviews' },
     { label: 'Total Customers',  value: String(customers ?? 0),          sub: 'registered accounts' },
     { label: 'Active Workers',   value: String(workers ?? 0),            sub: 'available now' },
     { label: 'Pending Approvals',value: String(pendingApts ?? 0),        sub: 'need review' },
@@ -48,7 +48,7 @@ export default async function AdminPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">Analytics</h1>
+          <h1 className="font-display text-3xl text-navy">Analytics</h1>
           <p className="text-[--gray-500] text-sm mt-1">
             Business overview for {format(now, 'MMMM yyyy')}
           </p>
@@ -62,7 +62,7 @@ export default async function AdminPage() {
             <p className="text-xs font-semibold text-[--gray-300] uppercase tracking-wider mb-2">
               {m.label}
             </p>
-            <p className="font-display text-2xl text-navy-DEFAULT">{m.value}</p>
+            <p className="font-display text-2xl text-navy">{m.value}</p>
             <p className="text-xs text-[--gray-300] mt-1">{m.sub}</p>
           </div>
         ))}

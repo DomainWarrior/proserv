@@ -17,17 +17,17 @@ export function PricingCards({ packages }: { packages: Package[] }) {
           key={pkg.name}
           className={cn(
             'card p-7 flex flex-col relative',
-            pkg.featured && 'border-gold-DEFAULT border-2'
+            pkg.featured && 'border-gold border-2'
           )}
         >
           {pkg.featured && (
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-DEFAULT text-navy-DEFAULT text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-navy text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
               Most Popular
             </div>
           )}
 
           <h3 className="font-semibold text-[--gray-500] mb-1">{pkg.name}</h3>
-          <div className="font-display text-4xl text-navy-DEFAULT mb-0.5">
+          <div className="font-display text-4xl text-navy mb-0.5">
             ${pkg.price}
           </div>
           <p className="text-xs text-[--gray-300] mb-6">per visit</p>
@@ -46,8 +46,8 @@ export function PricingCards({ packages }: { packages: Package[] }) {
             className={cn(
               'w-full text-center py-2.5 rounded-xl text-sm font-semibold transition-all',
               pkg.featured
-                ? 'bg-navy-DEFAULT text-white hover:bg-navy-mid'
-                : 'border border-[--gray-200] text-navy-DEFAULT hover:border-navy-DEFAULT hover:bg-[--off-white]'
+                ? 'bg-navy text-white hover:bg-navy-mid'
+                : 'border border-[--gray-200] text-navy hover:border-navy hover:bg-[--off-white]'
             )}
           >
             Book {pkg.name}

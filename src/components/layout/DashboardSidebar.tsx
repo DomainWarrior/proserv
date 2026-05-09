@@ -46,10 +46,10 @@ export function DashboardSidebar({ profile, userEmail, isAdmin = false }: Props)
   }
 
   return (
-    <aside className="w-64 bg-navy-DEFAULT flex-shrink-0 flex flex-col hidden md:flex">
+    <aside className="w-64 bg-navy flex-shrink-0 flex flex-col hidden md:flex">
       {/* Logo */}
       <div className="px-6 py-5 border-b border-white/10">
-        <Link href="/" className="font-display text-gold-DEFAULT text-xl">ProServ</Link>
+        <Link href="/" className="font-display text-gold text-xl">ProServ</Link>
         <p className="text-white/40 text-xs mt-0.5 font-sans">
           {isAdmin ? 'Admin Dashboard' : 'Customer Portal'}
         </p>
@@ -93,7 +93,7 @@ export function DashboardSidebar({ profile, userEmail, isAdmin = false }: Props)
       {/* User footer */}
       <div className="px-4 py-4 border-t border-white/10">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-gold-DEFAULT/20 flex items-center justify-center text-gold-DEFAULT text-xs font-bold flex-shrink-0">
+          <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold flex-shrink-0">
             {getInitials(profile?.full_name ?? userEmail)}
           </div>
           <div className="flex-1 min-w-0">

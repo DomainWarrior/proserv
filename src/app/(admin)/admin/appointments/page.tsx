@@ -29,7 +29,7 @@ export default async function AdminAppointmentsPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">Appointments</h1>
+          <h1 className="font-display text-3xl text-navy">Appointments</h1>
           <p className="text-[--gray-500] text-sm mt-1">{appointments?.length ?? 0} appointments found</p>
         </div>
       </div>
@@ -38,7 +38,7 @@ export default async function AdminAppointmentsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-navy-DEFAULT text-white">
+              <tr className="bg-navy text-white">
                 {['Customer', 'Service', 'Date & Time', 'Worker', 'Status', 'Price', 'Actions'].map(h => (
                   <th key={h} className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider">
                     {h}
@@ -50,7 +50,7 @@ export default async function AdminAppointmentsPage() {
               {appointments?.map(apt => (
                 <tr key={apt.id} className="hover:bg-[--off-white] transition-colors">
                   <td className="px-4 py-3">
-                    <div className="font-medium text-navy-DEFAULT">{(apt.customer as any)?.full_name ?? '—'}</div>
+                    <div className="font-medium text-navy">{(apt.customer as any)?.full_name ?? 'â€”'}</div>
                     <div className="text-xs text-[--gray-300]">{(apt.customer as any)?.phone}</div>
                   </td>
                   <td className="px-4 py-3 text-[--gray-700]">{(apt.service as any)?.name}</td>
@@ -60,7 +60,7 @@ export default async function AdminAppointmentsPage() {
                   </td>
                   <td className="px-4 py-3">
                     {(apt.worker as any)?.full_name
-                      ? <span className="text-navy-DEFAULT">{(apt.worker as any).full_name}</span>
+                      ? <span className="text-navy">{(apt.worker as any).full_name}</span>
                       : <span className="text-xs text-red-500 font-medium">Unassigned</span>
                     }
                   </td>
@@ -68,7 +68,7 @@ export default async function AdminAppointmentsPage() {
                     <span className={`status-badge ${getStatusColor(apt.status)}`}>{apt.status}</span>
                   </td>
                   <td className="px-4 py-3 font-medium">
-                    {apt.price ? `$${Number(apt.price).toFixed(2)}` : '—'}
+                    {apt.price ? `$${Number(apt.price).toFixed(2)}` : 'â€”'}
                   </td>
                   <td className="px-4 py-3">
                     <AppointmentActions

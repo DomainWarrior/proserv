@@ -69,15 +69,15 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-navy-DEFAULT/96 backdrop-blur-md border-b border-gold-DEFAULT/20 shadow-lg'
-          : 'bg-navy-DEFAULT/90 backdrop-blur-sm'
+          ? 'bg-navy/96 backdrop-blur-md border-b border-gold/20 shadow-lg'
+          : 'bg-navy/90 backdrop-blur-sm'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand */}
         <Link
           href="/"
-          className="font-display text-gold-DEFAULT text-2xl hover:opacity-90 transition-opacity"
+          className="font-display text-gold text-2xl hover:opacity-90 transition-opacity"
         >
           ProServ
         </Link>
@@ -91,7 +91,7 @@ export function Navbar() {
               className={cn(
                 'text-sm font-medium transition-colors',
                 pathname === link.href
-                  ? 'text-gold-DEFAULT'
+                  ? 'text-gold'
                   : 'text-white/75 hover:text-white'
               )}
             >
@@ -100,7 +100,7 @@ export function Navbar() {
           ))}
           <a
             href="tel:+15551234567"
-            className="flex items-center gap-2 text-sm text-white/75 hover:text-gold-DEFAULT transition-colors"
+            className="flex items-center gap-2 text-sm text-white/75 hover:text-gold transition-colors"
           >
             <Phone size={14} />
             (555) 123-4567
@@ -121,7 +121,7 @@ export function Navbar() {
             <div className="hidden md:flex items-center gap-2">
               <Link
                 href={user.role === 'admin' ? '/admin' : '/dashboard'}
-                className="text-sm font-medium text-white/75 hover:text-gold-DEFAULT border border-gold-DEFAULT/30 px-3 py-1.5 rounded-lg transition-colors"
+                className="text-sm font-medium text-white/75 hover:text-gold border border-gold/30 px-3 py-1.5 rounded-lg transition-colors"
               >
                 Dashboard
               </Link>
@@ -133,7 +133,7 @@ export function Navbar() {
             <div className="hidden md:flex items-center gap-2">
               <Link
                 href="/login"
-                className="text-sm font-medium text-gold-DEFAULT border border-gold-DEFAULT/30 px-4 py-2 rounded-lg hover:bg-gold-DEFAULT/10 transition-all"
+                className="text-sm font-medium text-gold border border-gold/30 px-4 py-2 rounded-lg hover:bg-gold/10 transition-all"
               >
                 Sign In
               </Link>
@@ -158,7 +158,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-navy-DEFAULT border-t border-white/10 px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden bg-navy border-t border-white/10 px-4 py-4 flex flex-col gap-3">
           {navLinks.map(link => (
             <Link
               key={link.href}
@@ -169,8 +169,8 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a href="tel:+15551234567" className="text-gold-DEFAULT text-sm font-semibold py-2">
-            📞 (555) 123-4567
+          <a href="tel:+15551234567" className="text-gold text-sm font-semibold py-2">
+            ðŸ“ž (555) 123-4567
           </a>
           {user ? (
             <Link href="/dashboard" className="btn-primary text-sm w-full justify-center mt-2">

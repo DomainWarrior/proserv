@@ -17,12 +17,12 @@ export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
             onClick={() => setOpen(open === i ? null : i)}
             className="w-full flex items-center justify-between gap-4 text-left"
           >
-            <span className="font-semibold text-navy-DEFAULT">{faq.q}</span>
+            <span className="font-semibold text-navy">{faq.q}</span>
             <ChevronDown
               size={18}
               className={cn(
                 'text-[--gray-300] flex-shrink-0 transition-transform duration-200',
-                open === i && 'rotate-180 text-gold-DEFAULT'
+                open === i && 'rotate-180 text-gold'
               )}
             />
           </button>

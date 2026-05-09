@@ -17,7 +17,7 @@ export default async function AdminWorkersPage() {
     <div>
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">Workers</h1>
+          <h1 className="font-display text-3xl text-navy">Workers</h1>
           <p className="text-[--gray-500] text-sm mt-1">{workers?.length ?? 0} team members</p>
         </div>
         <button
@@ -34,11 +34,11 @@ export default async function AdminWorkersPage() {
           return (
             <div key={w.id} className="card p-6">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-navy-DEFAULT flex items-center justify-center text-gold-DEFAULT font-bold font-display text-lg flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center text-gold font-bold font-display text-lg flex-shrink-0">
                   {getInitials(profile?.full_name ?? 'W')}
                 </div>
                 <div>
-                  <p className="font-semibold text-navy-DEFAULT">{profile?.full_name}</p>
+                  <p className="font-semibold text-navy">{profile?.full_name}</p>
                   <p className="text-xs text-[--gray-300] capitalize">
                     {w.specialties?.join(', ').replace(/_/g, ' ')}
                   </p>
@@ -48,10 +48,10 @@ export default async function AdminWorkersPage() {
 
               <div className="flex items-center gap-4 text-sm mb-4">
                 <div className="flex items-center gap-1">
-                  <Star size={13} className="text-gold-DEFAULT fill-gold-DEFAULT" />
+                  <Star size={13} className="text-gold fill-gold" />
                   <span className="font-semibold">{Number(w.rating).toFixed(2)}</span>
                 </div>
-                <span className="text-[--gray-300]">·</span>
+                <span className="text-[--gray-300]">Â·</span>
                 <span className="text-[--gray-500]">{w.jobs_completed} jobs</span>
               </div>
 

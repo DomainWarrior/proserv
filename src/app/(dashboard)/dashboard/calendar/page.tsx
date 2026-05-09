@@ -86,7 +86,7 @@ export default function CalendarPage() {
     <div>
       <div className="flex items-start justify-between mb-6 flex-wrap gap-4">
         <div>
-          <h1 className="font-display text-3xl text-navy-DEFAULT">Calendar</h1>
+          <h1 className="font-display text-3xl text-navy">Calendar</h1>
           <p className="text-[--gray-500] text-sm mt-1">Your appointment schedule</p>
         </div>
 
@@ -101,7 +101,7 @@ export default function CalendarPage() {
           )}>
             <span className="text-2xl">{weather.icon}</span>
             <div>
-              <div className="font-semibold">{weather.temperature}°F — {weather.description}</div>
+              <div className="font-semibold">{weather.temperature}Â°F â€” {weather.description}</div>
               <div className="flex gap-3 text-xs opacity-70 mt-0.5">
                 <span className="flex items-center gap-1"><Wind size={11} /> {weather.windSpeed} mph</span>
                 <span className="flex items-center gap-1"><Droplets size={11} /> {weather.humidity}%</span>
@@ -109,7 +109,7 @@ export default function CalendarPage() {
             </div>
             {weather.isRainy && (
               <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full font-semibold">
-                ⚠️ Outdoor services may be affected
+                âš ï¸ Outdoor services may be affected
               </span>
             )}
           </div>
@@ -140,8 +140,8 @@ export default function CalendarPage() {
       {selectedApt && (
         <div className="card p-6">
           <div className="flex items-start justify-between mb-4">
-            <h3 className="font-semibold text-navy-DEFAULT">Appointment Details</h3>
-            <button onClick={() => setSelectedApt(null)} className="text-[--gray-300] hover:text-navy-DEFAULT">✕</button>
+            <h3 className="font-semibold text-navy">Appointment Details</h3>
+            <button onClick={() => setSelectedApt(null)} className="text-[--gray-300] hover:text-navy">âœ•</button>
           </div>
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
@@ -154,7 +154,7 @@ export default function CalendarPage() {
             </div>
             <div>
               <p className="text-xs font-semibold text-[--gray-300] uppercase tracking-wider mb-1">Date & Time</p>
-              <p className="font-medium">{format(new Date(selectedApt.scheduled_at), 'MMMM d, yyyy • h:mm a')}</p>
+              <p className="font-medium">{format(new Date(selectedApt.scheduled_at), 'MMMM d, yyyy â€¢ h:mm a')}</p>
             </div>
             <div>
               <p className="text-xs font-semibold text-[--gray-300] uppercase tracking-wider mb-1">Technician</p>
